@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jossParfum.450 </title>
+<meta name="description" content="Perfumes de hombre y mujer. Pide por Instagram o WhatsApp.">
+<meta property="og:title" content="jossParfum.450 | Perfumes de hombre y mujer">
+<meta property="og:description" content="Encuentra tu fragancia ideal. Pide por Instagram o WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="imagen30.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#f6f5f3;--ink:#1a1a1a;--muted:#7a7a7a;--line:#e8e6e2;--accent:#8c6d43;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--bg);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Encabezado */
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.95);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.logo{font-family:var(--serif);font-weight:600;font-size:1.5rem;text-decoration:none}
+nav{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:.9rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+/* Portada */
+.hero{padding:40px 0 56px}
+.hero .wrap{display:grid;gap:28px;align-items:center}
+.hero .foto{aspect-ratio:4/3}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.05;margin-bottom:14px}
+.hero p{color:var(--muted);font-size:1.05rem;max-width:34ch;margin-bottom:24px}
+.botones{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border:1px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font:400 .95rem var(--sans);cursor:pointer;text-align:center}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn.claro{background:transparent;color:var(--ink)}
+.btn.claro:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn:disabled{opacity:.4;cursor:not-allowed;background:var(--ink)}
+@media(min-width:800px){.hero .wrap{grid-template-columns:1.15fr 1fr;gap:56px}}
+
+/* Fotos de productos con mezcla para quitar bordes blancos */
+.foto{background:var(--soft);color:#b5b1aa;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.9rem;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:contain;padding:12px;mix-blend-mode:multiply}
+
+/* Excepción para la sección Sobre nosotros para que tu logo luzca perfecto */
+.sobre .foto img{mix-blend-mode:normal;padding:0;object-fit:cover}
+
+/* Secciones y tarjetas */
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,5vw,2.6rem);margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 16px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:40px 22px}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.p{display:flex;flex-direction:column}
+.abrir{display:block;width:100%;border:0;padding:0;cursor:pointer;aspect-ratio:4/5;margin-bottom:12px}
+.abrir:hover img{opacity:.88}
+.p h3{font-weight:400;font-size:1rem;line-height:1.35}
+.marca{color:var(--muted);font-size:.88rem}
+.marca:empty{display:none}
+.precios{list-style:none;margin-top:auto;padding-top:10px;font-size:.85rem}
+.precios li{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding:3px 0}
+.precios b{font-weight:500;color:var(--accent)}
+
+/* Ventanas (detalle y carrito) */
+dialog{border:0;padding:22px;width:min(92vw,440px);max-height:90vh;overflow:auto;margin:auto;background:#fff;color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.cerrar{position:absolute;top:6px;right:8px;width:44px;height:44px;font-size:1.8rem;line-height:1;background:none;border:0;cursor:pointer;z-index:1}
+#detalle .foto{aspect-ratio:1/1;margin-bottom:14px}
+#detalle .foto img{object-fit:contain;mix-blend-mode:normal}
+#detalle h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;line-height:1.15}
+#d-desc{margin-top:8px}
+.tamanos{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.tamanos label{position:relative;cursor:pointer}
+.tamanos input{position:absolute;opacity:0}
+.tamanos span{display:block;text-align:center;padding:10px 4px;border:1px solid var(--line);line-height:1.3;font-size:.85rem}
+.tamanos input:checked+span{border-color:var(--ink);background:var(--soft)}
+.tamanos input:focus-visible+span{outline:2px solid var(--accent)}
+.tamanos input:disabled+span{opacity:.4}
+dialog .btn{width:100%}
+#carrito h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin-bottom:6px}
+#c-lista{list-style:none}
+#c-lista li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+#c-lista small{display:block;color:var(--muted)}
+.qty{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.qty button{width:36px;height:36px;border:1px solid var(--line);background:#fff;font-size:1.1rem;cursor:pointer}
+.total{display:flex;justify-content:space-between;margin:16px 0;font-size:1.1rem}
+.vaciar{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit;margin-top:12px;padding:8px 0}
+.nota{margin-top:14px;font-size:.9rem;color:var(--muted)}
+#c-texto{width:100%;margin-top:8px;padding:10px;border:1px solid var(--line);font:inherit;font-size:.85rem}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:var(--ink);color:#fff;border:0;padding:14px 20px;font:400 .95rem var(--sans);cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.2)}
+.fab span{margin-left:6px;background:#fff;color:var(--ink);border-radius:99px;padding:1px 9px;font-size:.85rem}
+#aviso{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s;z-index:10}
+#aviso.ver{opacity:1}
+/* Combos */
+.combo-card{
+  display:flex;
+  flex-direction:column;
+}
+.combo-foto{
+  width:100%;
+  aspect-ratio:4/5;
+  background:var(--soft);
+  border:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:.9rem;
+  margin-bottom:12px;
+}
+.combo-card h3{
+  font-weight:400;
+  font-size:1.05rem;
+  line-height:1.35;
+  margin-bottom:5px;
+}
+.combo-perfumes{
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.5;
+  margin-bottom:12px;
+}
+.combo-precios{
+  list-style:none;
+  margin-top:auto;
+  font-size:.88rem;
+}
+.combo-precios li{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  border-top:1px solid var(--line);
+  padding:5px 0;
+}
+.combo-precios b{
+  font-weight:500;
+  color:var(--accent);
+}
+/* Sugerencias */
+.sugerencias form{display:grid;gap:12px;max-width:520px}
+.sugerencias select,.sugerencias textarea,.sugerencias input{width:100%;padding:12px;border:1px solid var(--line);background:#fff;font:inherit;color:var(--ink)}
+.sugerencias textarea{min-height:110px;resize:vertical}
+
+
+/* Sobre nosotros / contacto */
+.sobre .wrap{display:grid;gap:28px;align-items:center}
+.sobre .foto{aspect-ratio:1/1;max-width:340px;background:#111}
+.sobre p{max-width:52ch;margin-bottom:14px}
+@media(min-width:800px){.sobre .wrap{grid-template-columns:auto 1fr;gap:56px}}
+.contacto p{margin-bottom:20px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0 90px;color:var(--muted);font-size:.85rem}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.gancho{font-family:var(--serif);font-size:clamp(1.2rem,3.4vw,1.6rem);line-height:1.35;max-width:38ch;margin:8px 0 10px}
+.buscador{padding:28px 0}
+.buscador input{width:100%;max-width:520px;padding:14px 16px;border:1px solid var(--line);background:#fff;font:inherit;color:var(--ink)}
+.buscador .sub{margin:10px 0 0}
+.sin{margin-top:20px;padding:24px;background:var(--soft);max-width:560px}
+.sin h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.2;margin-bottom:8px}
+.sin p{margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">jossParfum.450</a>
+    <nav>
+      <a href="#hombre">Hombre</a>
+      <a href="#mujer">Mujer</a>
+      <a href="#sugerencias">Sugerencias</a>
+  <a href="#combos">Combos</a>
+  <a href="#sugerencias">Sugerencias</a>
+      <a href="#sobre-nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ============ PORTADA ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="foto"><img src="imagen30.jpg" alt="Valentino Born in Roma"></div>
+    <div>
+      <h1>Valentino Born in Roma</h1>
+      <p>Elegancia italiana en cada detalle. Encuentra tu fragancia en jossParfum.450.</p>
+      <div class="botones">
+        <a class="btn" href="#hombre">Ver perfumes de hombre</a>
+        <a class="btn claro" href="https://ig.me/m/jossparfum.450" target="_blank" rel="noopener">Pedir por Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="buscador" id="buscador">
+  <div class="wrap">
+    <label for="buscar" class="sr">Buscar perfume</label>
+    <input id="buscar" type="search" placeholder="Busca tu perfume o marca (ej. Khamrah, Versace)" autocomplete="off">
+    <p id="b-info" class="sub" aria-live="polite"></p>
+    <div id="sin-resultados" class="sin" hidden>
+      <h3>Aún no tenemos &laquo;<span id="b-q"></span>&raquo;</h3>
+      <p>Nuestra colección crece día a día y queremos que tu fragancia ideal forme parte de ella. Cuéntanos qué perfume buscas y lo tendremos en cuenta para nuestra próxima selección.</p>
+      <button type="button" class="btn" id="b-sug">Dejar mi sugerencia</button>
+    </div>
+  </div>
+</section>
+
+<section id="hombre">
+  <div class="wrap">
+    <h2>Perfumes de hombre</h2>
+    <p class="gancho">Fragancias con carácter para dejar huella. Desde frescos y aromáticos hasta intensos y envolventes: encuentra el aroma que te represente.</p>
+    <p class="sub">Toca la foto para ver los detalles y agregarlo al carrito. Precios por 2 ml, 5 ml, 10 ml y 30 ml.</p>
+    <div class="grid">
+    <article class="p" data-p="65,120,230,630" data-desc="Versión más intensa de Born in Roma: vainilla cálida con lavanda y vetiver, y un toque especiado de jengibre. Dulce sin empalagar, ideal para noches y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Valentino Born in Roma Intense"><img src="imagen30.jpg" alt="Valentino Born in Roma Intense" loading="lazy"></button>
+      <h3>Born in Roma Intense</h3>
+      <p class="marca">Valentino</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="60,105,200,525" data-desc="Dulce y especiado: castaña tostada, canela y vainilla sobre un fondo ambarado. Un aroma envolvente y seductor para noches y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Stronger With You Intensely"><img src="imagen31.jpg" alt="Stronger With You Intensely" loading="lazy"></button>
+      <h3>Stronger With You Intensely</h3>
+      <p class="marca">Giorgio Armani</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="55,95,190,550" data-desc="Coco cremoso, tonka y maderas cálidas. Un aroma tropical, sensual y muy fácil de llevar, que deja estela.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Jean Paul Gaultier Le Beau Le Parfum"><img src="imagen32.jpg" alt="Jean Paul Gaultier Le Beau Le Parfum" loading="lazy"></button>
+      <h3>Le Beau Le Parfum</h3>
+      <p class="marca">Jean Paul Gaultier</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="55,95,190,560" data-desc="Lavanda aromática con especias cálidas y vainilla. Sensual, intenso y perfecto para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Jean Paul Gaultier Le Male Le Parfum"><img src="imagen33.jpg" alt="Jean Paul Gaultier Le Male Le Parfum" loading="lazy"></button>
+      <h3>Le Male Le Parfum</h3>
+      <p class="marca">Jean Paul Gaultier</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Aroma juvenil y vibrante, de carácter fresco y especiado, pensado para destacar en el día a día.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Halloween Man X"><img src="imagen34.jpg" alt="Halloween Man X" loading="lazy"></button>
+      <h3>Halloween Man X</h3>
+      <p class="marca">Jesús del Pozo</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="45,85,140,310" data-desc="Versión más concentrada y cálida de Eros: frescura inicial con un fondo dulce y amaderado de vainilla y tonka. Seductor y de gran presencia.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Versace Eros EDP"><img src="imagen40.jpg" alt="Versace Eros EDP" loading="lazy"></button>
+      <h3>Eros EDP</h3>
+      <p class="marca">Versace</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="45,85,140,320" data-desc="Cítricos con pimienta negra y romero, corazón de geranio y fondo de vainilla y maderas. Cálido, vibrante y seductor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Versace Eros Flame"><img src="imagen29.jpg" alt="Versace Eros Flame" loading="lazy"></button>
+      <h3>Eros Flame</h3>
+      <p class="marca">Versace</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Dulce y especiado: manzana, canela y lavanda con fondo de vainilla, tonka y ámbar. Pensado para salidas de noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de 9PM"><img src="imagen28.jpg" alt="9PM" loading="lazy"></button>
+      <h3>9PM</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="La versión fresca y acuática de la línea 9, pensada para el día: limpio, energético y ideal para el calor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de 9AM Dive"><img src="imagen27.jpg" alt="9AM Dive" loading="lazy"></button>
+      <h3>9AM Dive</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Una variante más atrevida de la línea 9PM, con mucha presencia y carácter para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de 9PM Rebel"><img src="imagen26.jpg" alt="9PM Rebel" loading="lazy"></button>
+      <h3>9PM Rebel</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,110,270" data-desc="Otra variante de la línea 9PM, pensada para salidas nocturnas: aroma llamativo y seductor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de 9PM Night Out"><img src="imagen25.jpg" alt="9PM Night Out" loading="lazy"></button>
+      <h3>9PM Night Out</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="Piña con crème brûlée, corazón de canela, pimienta negra y cúrcuma, y fondo de vainilla y sándalo. Dulce, especiado y muy llamativo. Unisex.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Honor y Gloria"><img src="imagen24.jpg" alt="Honor y Gloria" loading="lazy"></button>
+      <h3>Honor y Gloria</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,100,270" data-desc="Agua de coco, higo y menta sobre un fondo de tonka, almizcle y sándalo. Fresco, cremoso y tropical, ideal para el calor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Tropical"><img src="imagen23.jpg" alt="Hawas Tropical" loading="lazy"></button>
+      <h3>Hawas Tropical</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,110,270" data-desc="Jengibre, bergamota y mandarina, con canela, té verde y neroli; fondo de ámbar, almizcle y maderas. Cítrico, elegante y versátil.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Kobra"><img src="imagen22.jpg" alt="Hawas Kobra" loading="lazy"></button>
+      <h3>Hawas Kobra</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="El clásico de la línea Hawas: fresco, acuático y frutal, con un toque de canela y fondo de ámbar. Ideal para el día a día.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas For Him"><img src="imagen21.jpg" alt="Hawas For Him" loading="lazy"></button>
+      <h3>Hawas For Him</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,110,270" data-desc="La versión helada de Hawas: frescura intensa y acuática para los días de más calor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Ice"><img src="imagen20.jpg" alt="Hawas Ice" loading="lazy"></button>
+      <h3>Hawas Ice</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Frescura de menta y bergamota con lavanda, sobre un fondo cremoso de vainilla y tonka. Un contraste fresco y dulce, ideal para noches y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Elixir"><img src="imagen19.jpg" alt="Hawas Elixir" loading="lazy"></button>
+      <h3>Hawas Elixir</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,210" data-desc="Especiado y envolvente: pimienta negra, tabaco y vainilla con ámbar. Masculino, de mucha presencia, ideal para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Lattafa Asad"><img src="imagen1.jpg" alt="Lattafa Asad" loading="lazy"></button>
+      <h3>Asad</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Una versión más pulida y elegante de Asad, con especias, vainilla y notas amaderadas.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Lattafa Asad Elixir"><img src="imagen 2.jpg" alt="Lattafa Asad Elixir" loading="lazy"></button>
+      <h3>Asad Elixir</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Variante de Asad con acordes cálidos de vainilla bourbon y especias. Dulce, ambarado y envolvente.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Lattafa Asad Bourbon"><img src="imagen 3.jpg" alt="Lattafa Asad Bourbon" loading="lazy"></button>
+      <h3>Asad Bourbon</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Cítrico y luminoso, con la mandarina como protagonista. Fresco, alegre y fácil de usar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Mandarin Sky"><img src="imagen4.jpg" alt="Mandarin Sky" loading="lazy"></button>
+      <h3>Mandarin Sky</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Fresco y acuático, con cítricos y un aire marino. Energético, ideal para el día y el calor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Odyssey Aqua"><img src="imagen5.jpg" alt="Odyssey Aqua" loading="lazy"></button>
+      <h3>Odyssey Aqua</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Gourmand cálido: canela, nuez moscada, dátiles, praliné, vainilla y tonka. Dulce, envolvente y muy popular en clima fresco y noches.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Lattafa Khamrah"><img src="imagen 6.jpg" alt="Lattafa Khamrah" loading="lazy"></button>
+      <h3>Khamrah</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Aroma cálido y elegante, con carácter seductor. Pensado para ocasiones especiales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de His Confession"><img src="imagen7.jpg" alt="His Confession" loading="lazy"></button>
+      <h3>His Confession</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="Una propuesta con aire retro y mucha personalidad: elegante, distinta y llamativa.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Pride Vintage Radio"><img src="imagen8.jpg" alt="Pride Vintage Radio" loading="lazy"></button>
+      <h3>Pride Vintage Radio</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="Apertura cítrica y frutal (limón, piña, bergamota) con fondo amaderado y almizcle. Intenso, de gran presencia y larga duración.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Club de Nuit Intense"><img src="imagen50.jpg" alt="Club de Nuit Intense" loading="lazy"></button>
+      <h3>Club de Nuit Intense</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,240" data-desc="Versión más profunda y dulce de Mandarin Sky: mandarina jugosa sobre un fondo cálido de vainilla y maderas. Fresco al inicio, envolvente al secar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Mandarin Sky Elixir"><img src="imagen51.jpg" alt="Mandarin Sky Elixir" loading="lazy"></button>
+      <h3>Mandarin Sky Elixir</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,235" data-desc="Aroma ardiente y especiado, con acordes cálidos y ambarados que dan la sensación de fuego. Intenso, masculino y con mucha presencia.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Vulcan Feu"><img src="imagen67.jpg" alt="Vulcan Feu" loading="lazy"></button>
+      <h3>Vulcan Feu</h3>
+      <p class="marca">French Avenue</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,235" data-desc="Inspirado en el desierto: aroma seco, cálido y amaderado con toques especiados. Masculino y elegante, ideal para clima fresco y noches.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Dunescape"><img src="imagen52.jpg" alt="Dunescape" loading="lazy"></button>
+      <h3>Dunescape</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Aroma oriental con carácter: humo suave, especias y fondo ambarado y amaderado. Intenso, misterioso y de gran estela.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Dukhan"><img src="imagen53.jpg" alt="Dukhan" loading="lazy"></button>
+      <h3>Dukhan</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Versión elixir de Rayhaan: más concentrada, cálida y especiada, con fondo dulce y amaderado. Elegante y seductora para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Rayhaan Elixir"><img src="imagen54.jpg" alt="Rayhaan Elixir" loading="lazy"></button>
+      <h3>Rayhaan Elixir</h3>
+      <p class="marca">Rayhaan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,199" data-desc="Aroma oriental fresco y especiado con fondo amaderado. Versátil y elegante, fácil de llevar de día y de noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hayaati"><img src="imagen55.jpg" alt="Hayaati" loading="lazy"></button>
+      <h3>Hayaati</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,230" data-desc="Clásico masculino de aire italiano: frescura aromática al inicio con un fondo limpio y amaderado. Elegante y para uso diario.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Rome Pour Homme"><img src="imagen56.jpg" alt="Rome Pour Homme" loading="lazy"></button>
+      <h3>Rome Pour Homme</h3>
+      <p class="marca">Bharara Beauty</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="Edición blanca de la línea Odyssey: fresca, limpia y moderna, con cítricos, notas aromáticas y fondo suave de almizcle y maderas. Ideal para el día.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Odyssey Homme White Edition"><img src="imagen57.jpg" alt="Odyssey Homme White Edition" loading="lazy"></button>
+      <h3>Odyssey Homme White Edition</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,70,100,260" data-desc="Variante de la línea Hawas con aire de playa: fresco, frutal y acuático, pensado para el calor y los días soleados.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Malibu"><img src="imagen58.jpg" alt="Hawas Malibu" loading="lazy"></button>
+      <h3>Hawas Malibu</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="La versión más potente de la línea Odyssey: intensa, moderna y de gran proyección, con carácter para destacar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Odyssey Mega"><img src="imagen59.jpg" alt="Odyssey Mega" loading="lazy"></button>
+      <h3>Odyssey Mega</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,70,110,280" data-desc="Edición de colección de Supremacy: aroma elegante y moderno, con presencia y buena duración. Pensado para quien quiere destacar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Supremacy Collector&#x27;s Edition"><img src="imagen60.jpg" alt="Supremacy Collector&#x27;s Edition" loading="lazy"></button>
+      <h3>Supremacy Collector&#x27;s Edition</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Aroma italiano, fresco y deportivo, con un toque cálido que lo hace versátil. Masculino y fácil de llevar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Tag Uomo Rosso"><img src="imagen61.jpg" alt="Tag Uomo Rosso" loading="lazy"></button>
+      <h3>Tag Uomo Rosso</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="40,75,120,305" data-desc="Aroma cálido y especiado con un toque frutal y fondo ambarado. Intenso, seductor y de mucha presencia, ideal para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Game of Spades Rouge"><img src="imagen62.jpg" alt="Game of Spades Rouge" loading="lazy"></button>
+      <h3>Game of Spades Rouge</h3>
+      <p class="marca">Jo Milano Paris</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,100,260" data-desc="Concentración extrait: más intensa y duradera, con carácter fresco y marino sobre un fondo amaderado. Elegante y con gran estela.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Atlantis Extrait"><img src="imagen64.jpg" alt="Atlantis Extrait" loading="lazy"></button>
+      <h3>Atlantis Extrait</h3>
+      <p class="marca">French Avenue</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,240" data-desc="Versión elixir de 9PM: más dulce y concentrada, con vainilla, especias y ámbar. Seductora y duradera, hecha para la noche.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de 9PM Elixir"><img src="imagen65.jpg" alt="9PM Elixir" loading="lazy"></button>
+      <h3>9PM Elixir</h3>
+      <p class="marca">Afnan</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="40,75,115,280" data-desc="Lavanda y bergamota al inicio, con especias cálidas en el corazón y un fondo de vainilla, ámbar y maderas. Masculino, elegante y de buena estela. Destaca por su carácter dulce y amaderado; ideal para noches, citas y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Bharara King"><img src="imagen73.jpg" alt="Bharara King" loading="lazy"></button>
+      <h3>King</h3>
+      <p class="marca">Bharara Beauty</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,70,110,280" data-desc="Fresco y verde, con cítricos y notas aromáticas sobre un fondo limpio de almizcle y maderas. Ligero y energético; destaca para el día a día, la oficina y el calor.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Verde"><img src="imagen74.jpg" alt="Hawas Verde" loading="lazy"></button>
+      <h3>Hawas Verde</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,95,250" data-desc="Cálido, dulce y especiado: canela, cardamomo y bergamota al inicio, con vainilla bourbon cremosa en el corazón y un fondo de praliné, ámbar y maderas. Masculino, envolvente y de gran estela; destaca por su calidez gourmand. Ideal para noches, salidas y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Musamam White Intense"><img src="imagen77.jpg" alt="liquid brun" loading="lazy"></button>
+      <h3>Liquid brun</h3>
+      <p class="marca">French Avenue</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,100,260" data-desc="Ardiente y especiado: cítricos vibrantes, canela y especias cálidas sobre un fondo ambarado y amaderado. Intenso, seductor y de mucha presencia; destaca por su calidez. Ideal para noches, salidas y clima fresco.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Fire"><img src="imagen76.jpg" alt="Hawas Fire" loading="lazy"></button>
+      <h3>Hawas Fire</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section id="mujer">
+  <div class="wrap">
+    <h2>Perfumes de mujer</h2>
+    <p class="gancho">Elegancia, dulzura y personalidad en cada frasco. Descubre las fragancias que se quedan en la memoria de todos.</p>
+    <p class="sub">Toca la foto para ver los detalles y agregarlo al carrito. Precios por 2 ml, 5 ml, 10 ml y 30 ml.</p>
+    <div class="grid">
+    <article class="p" data-p="35,60,85,200" data-desc="Dulce y cremoso, de estilo gourmand, con frutas dulces y vainilla. Delicado, divertido y juvenil.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yara Candy"><img src="imagen10.jpg" alt="Yara Candy" loading="lazy"></button>
+      <h3>Yara Candy</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+ <article class="p" data-p="35,60,90,230" data-desc="Versión intensa de Musamam: apertura fresca y cítrica, corazón limpio y fondo de almizcle blanco y maderas. Elegante y discreto; destaca por su frescura duradera. Ideal para el día, el trabajo y la primavera.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Musamam White Intense"><img src="imagen75.jpg" alt="Musamam White Intense" loading="lazy"></button>
+      <h3>Musamam White Intense</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,210" data-desc="Floral y frutal con vainilla y almizcle. Dulce, delicado y muy femenino.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yara Pink"><img src="imagen11.jpg" alt="Yara Pink" loading="lazy"></button>
+      <h3>Yara Pink</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,230" data-desc="Versión más intensa de Yara: vainilla, flores y un fondo cremoso. Dulce y envolvente.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yara Elixir"><img src="imagen12.jpg" alt="Yara Elixir" loading="lazy"></button>
+      <h3>Yara Elixir</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,200" data-desc="Dulce y juvenil, con aire frutal y floral. Coqueto y fácil de llevar.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Halloween Kiss"><img src="imagen 13.jpg" alt="Halloween Kiss" loading="lazy"></button>
+      <h3>Halloween Kiss</h3>
+      <p class="marca">Jesús del Pozo</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,195" data-desc="Fresco, alegre y moderno, pensado para el día a día.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Rave Now Eau"><img src="imagen 14.jpg" alt="Rave Now Eau" loading="lazy"></button>
+      <h3>Rave Now Eau</h3>
+      <p class="marca">Lataffa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,110,270" data-desc="De la línea Hawas, para ella: dulce, llamativo y femenino.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Hawas Diva"><img src="imagen 15.jpg" alt="Hawas Diva" loading="lazy"></button>
+      <h3>Hawas Diva</h3>
+      <p class="marca">Rasasi</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,65,110,270" data-desc="Dulce y envolvente, de estilo gourmand. Divertida y muy llamativa.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yum Yum"><img src="imagen16.jpg" alt="Yum Yum" loading="lazy"></button>
+      <h3>Yum Yum</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,220" data-desc="Dulce, cremosa y envolvente, con aroma tipo postre. Ideal para quienes aman lo gourmand.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Eclaire Eau"><img src="imagen17.jpg" alt="Eclaire Eau" loading="lazy"></button>
+      <h3>Eclaire Eau</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,210" data-desc="Floral con la rosa como protagonista. Elegante, sofisticada y de estilo árabe.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Ameerat Al Arab Prive Rose Eau"><img src="imagen18.jpg" alt="Ameerat Al Arab Prive Rose Eau" loading="lazy"></button>
+      <h3>Ameerat Al Arab Prive Rose Eau</h3>
+      <p class="marca">Asdaaf</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,230" data-desc="Aroma dulce y llamativo, con fondo cálido y envolvente. Pensado para quienes buscan una fragancia con mucha personalidad y presencia.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de La Bomba Rome"><img src="imagen66.jpg" alt="La Bomba Rome" loading="lazy"></button>
+      <h3>La Bomba Rome</h3>
+      <p class="marca">Bharara Beauty</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,205" data-desc="De la línea Yara: dulce, cremoso y frutal-floral, con vainilla y almizcle en el fondo. Suave, femenino y muy fácil de llevar; destaca por su aire delicado y juvenil. Ideal para el día, la universidad y salidas casuales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yara Moi"><img src="imagen72.jpg" alt="Yara Moi" loading="lazy"></button>
+      <h3>Yara Moi</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,85,205" data-desc="Otra versión de Yara: dulce y envolvente, con frutas, flores y un fondo cremoso de vainilla y almizcle. Coqueto y alegre; destaca por su dulzura suave. Ideal para el día y para tardes primaverales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Yara Tous"><img src="imagen71.jpg" alt="Yara Tous" loading="lazy"></button>
+      <h3>Yara Tous</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,230" data-desc="Gourmand dulce y cálido: vainilla, caramelo y almizcle, con un fondo suave y cremoso. Acogedor y sensual; destaca por su dulzura adictiva. Ideal para noches, clima fresco y ocasiones especiales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Angham"><img src="imagen70.jpg" alt="Angham" loading="lazy"></button>
+      <h3>Angham</h3>
+      <p class="marca">Lattafa</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,75,120,300" data-desc="Cloud de Ariana Grande: dulce, cremoso y suave como una nube. Lavanda, pera y bergamota al inicio, con coco y praliné en el corazón, sobre un fondo de vainilla, almizcle y maderas claras. Soñador y femenino; ideal para el día, las tardes y salidas casuales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Ariana Grande"><img src="imagen69.jpg" alt="Ariana Grande" loading="lazy"></button>
+      <h3>Ariana Grande</h3>
+      <p class="marca">Ariana Grande</p>
+      <ul class="precios"></ul>
+    </article>
+    <article class="p" data-p="35,60,90,230" data-desc="Floral y frutal con un fondo suave de almizcle y maderas. Elegante, femenino y con buena presencia; destaca por su aire sofisticado. Ideal para el trabajo, citas y ocasiones especiales.">
+      <button type="button" class="foto abrir" aria-label="Ver detalles de Club de Nuit Maleka"><img src="imagen68.jpg" alt="Club de Nuit Maleka" loading="lazy"></button>
+      <h3>Club de Nuit Maleka</h3>
+      <p class="marca">Armaf</p>
+      <ul class="precios"></ul>
+    </article>
+    </div>
+  </div>
+</section>
+<!-- ============ COMBOS ============ -->
+<section id="combos">
+  <div class="wrap">
+    <h2>Combos De Feria</h2>
+    <p class="gancho">Tus fragancias favoritas reunidas en combinaciones especiales. Elige tu combo y disfruta de varios aromas.</p>
+    <p class="sub">Cada combo incluye tres perfumes. Disponibles en presentaciones de 5 ml y 10 ml.</p>
+    <div class="grid">
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo1.jpg"></div>
+        <h3>🔥 Seductor</h3>
+        <p class="combo-perfumes">Le Male + Born in Roma Intense + Liquid Brun</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q465</b></li>
+          <li><span>5 ml</span><b>Q245</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo2.jpg"></div>
+        <h3>☀️ Día a día</h3>
+        <p class="combo-perfumes">Hawas Verde + Le Beau + Hayaati</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q335</b></li>
+          <li><span>5 ml</span><b>Q190</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo3.jpg"></div>
+        <h3>🌙 Salidas</h3>
+        <p class="combo-perfumes">9PM Elixir + Khamrah + Asad Elixir</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q230</b></li>
+          <li><span>5 ml</span><b>Q165</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo4.jpg"></div>
+        <h3>🍬 Para ella</h3>
+        <p class="combo-perfumes">Yara Pink + Angham + Hawas Diva</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q255</b></li>
+          <li><span>5 ml</span><b>Q145</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo5.jpg"></div>
+        <h3>🌴 Rasasi</h3>
+        <p class="combo-perfumes">Hawas Tropical + Elixir + For Him</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q240</b></li>
+          <li><span>5 ml</span><b>Q145</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo6.jpg"></div>
+        <h3>🦁 Asad</h3>
+        <p class="combo-perfumes">Bourbon + Elixir + Asad clásico</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q215</b></li>
+          <li><span>5 ml</span><b>Q140</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo7.jpg"></div>
+        <h3>🌊 Odyssey</h3>
+        <p class="combo-perfumes">Mandarin Sky + Odyssey White Edition + Odyssey Mega</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q215</b></li>
+          <li><span>5 ml</span><b>Q140</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo8.jpg"></div>
+        <h3>🕴️ Masculino</h3>
+        <p class="combo-perfumes">9PM Elixir + Asad + Dunescape</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q220</b></li>
+          <li><span>5 ml</span><b>Q145</b></li>
+        </ul>
+      </article>
+      <article class="combo-card">
+        <div class="combo-foto"><img src="combo9.jpg"></div>
+        <h3>🎉 Fiestero</h3>
+        <p class="combo-perfumes">Born in Roma Intense + Stronger With You + Le Male</p>
+        <ul class="combo-precios">
+          <li><span>10 ml</span><b>Q570</b></li>
+          <li><span>5 ml</span><b>Q285</b></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+ </div>
+  </div>
+<!-- ============ SUGERENCIAS Y VOTOS ============ -->
+<section class="sugerencias" id="sugerencias">
+  <div class="wrap">
+    <h2>Tu opinión cuenta</h2>
+    <p class="sub">Vota por tu perfume favorito, cuéntanos qué mejorar o qué perfume quieres que traigamos.</p>
+    <form id="form-sug">
+      <select name="tipo" aria-label="Tipo de mensaje">
+        <option>Quiero que traigan este perfume</option>
+        <option>Mi voto: mi perfume favorito</option>
+        <option>Sugerencia para mejorar</option>
+      </select>
+      <textarea name="mensaje" required placeholder="Escribe aquí tu mensaje"></textarea>
+      <button class="btn" type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="sobre" id="sobre-nosotros">
+  <div class="wrap">
+    <div class="foto"><img src="logoyo.jpg" alt="Logo de jossParfum.450"></div>
+    <div>
+      <h2>Sobre nosotros</h2>
+      <p>En jossParfum.450 vendemos perfumes de hombre y de mujer, elegidos para el día a día y para las ocasiones especiales.</p>
+      <p>Creemos que un buen perfume se elige con calma y con asesoría. Por eso atendemos de forma directa por Instagram y WhatsApp: te ayudamos a encontrar la fragancia que va contigo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <h2>Contacto</h2>
+    <p>Escríbenos para pedir tu perfume o resolver cualquier duda.</p>
+    <div class="botones">
+      <a class="btn" href="https://wa.me/50243359759" target="_blank" rel="noopener">WhatsApp 4335 9759</a>
+      <a class="btn claro" href="https://ig.me/m/jossparfum.450" target="_blank" rel="noopener">Instagram @jossParfum.450</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">&copy; jossParfum.450 &middot; Perfumes de hombre y mujer &middot; Pedidos por Instagram y WhatsApp</div></footer>
+
+<!-- Detalle del perfume -->
+<dialog id="detalle" aria-label="Detalle del perfume">
+  <button type="button" class="cerrar" aria-label="Cerrar">&times;</button>
+  <div class="foto"><img id="d-img" alt=""></div>
+  <h3 id="d-nombre"></h3>
+  <p id="d-marca" class="marca"></p>
+  <p id="d-desc"></p>
+  <div id="d-tamanos" class="tamanos" role="radiogroup" aria-label="Tamaño"></div>
+  <button type="button" id="d-agregar" class="btn">Agregar al carrito</button>
+</dialog>
+
+<!-- Carrito -->
+<dialog id="carrito" aria-label="Carrito">
+  <button type="button" class="cerrar" aria-label="Cerrar">&times;</button>
+  <h3>Tu carrito</h3>
+  <ul id="c-lista"></ul>
+  <div class="total"><span>Total</span><strong id="c-total">Q0</strong></div>
+  <button type="button" id="c-pagar" class="btn">Pagar y confirmar por Instagram</button>
+  <p id="c-nota" class="nota" hidden>Copiamos tu pedido. Pégalo en el chat de Instagram y confirma tus datos. Si no se copió, copia el texto de abajo.</p>
+  <textarea id="c-texto" rows="6" readonly hidden aria-label="Resumen del pedido"></textarea>
+  <button type="button" id="c-vaciar" class="vaciar">Vaciar carrito</button>
+</dialog>
+
+<button type="button" id="btn-carrito" class="fab">Carrito <span id="cuenta">0</span></button>
+<div id="aviso" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var Q=function(n){return 'Q'+n}, SZ=[2,5,10,30], cart=[];
+  try{cart=JSON.parse(localStorage.getItem('jp_carrito'))||[]}catch(e){}
+  var $=function(s){return document.querySelector(s)};
+  var guardar=function(){try{localStorage.setItem('jp_carrito',JSON.stringify(cart))}catch(e){}};
+  var esc=function(s){return s.replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})};
+  var tAviso;
+  function avisar(t){var a=$('#aviso');a.textContent=t;a.classList.add('ver');clearTimeout(tAviso);tAviso=setTimeout(function(){a.classList.remove('ver')},2200)}
+
+  document.querySelectorAll('.foto img').forEach(function(im){
+    im.addEventListener('error',function(){im.style.visibility='hidden'});
+  });
+
+  var dlg=$('#detalle'), actual=null;
+  document.querySelectorAll('.p').forEach(function(el){
+    var p={nombre:el.querySelector('h3').textContent.trim(),marca:el.querySelector('.marca').textContent.trim(),
+      full:(el.querySelector('.marca').textContent.trim()&&!/^(Valentino|Giorgio|Jean|Versace)/.test(el.querySelector('h3').textContent)?el.querySelector('.marca').textContent.trim()+' ':'')+el.querySelector('h3').textContent.trim(),
+      img:el.querySelector('img').getAttribute('src'),desc:el.dataset.desc||'',
+      precios:(el.dataset.p||'').split(',').map(Number)};
+    el.querySelector('.precios').innerHTML=SZ.map(function(s,i){
+      return '<li><span>'+s+' ml</span><b>'+(p.precios[i]>0?Q(p.precios[i]):'Consultar')+'</b></li>'}).join('');
+    el.querySelector('.abrir').addEventListener('click',function(){abrir(p)});
+  });
+
+  function abrir(p){
+    actual=p;
+    $('#d-img').style.visibility='visible';
+    $('#d-img').src=p.img;$('#d-img').alt=p.nombre;
+    $('#d-nombre').textContent=p.nombre;$('#d-marca').textContent=p.marca;$('#d-desc').textContent=p.desc;
+    var box=$('#d-tamanos');box.innerHTML='';
+    SZ.forEach(function(s,i){
+      var ok=p.precios[i]>0,l=document.createElement('label');
+      l.innerHTML='<input type="radio" name="tam" value="'+i+'"'+(ok?'':' disabled')+'><span>'+s+' ml<br><b>'+(ok?Q(p.precios[i]):'Consultar')+'</b></span>';
+      box.appendChild(l);
+    });
+    var primero=box.querySelector('input:not([disabled])');
+    if(primero)primero.checked=true;
+    $('#d-agregar').disabled=!primero;
+    dlg.showModal();
+  }
+  $('#d-img').addEventListener('error',function(){this.style.visibility='hidden'});
+  $('#d-agregar').addEventListener('click',function(){
+    var r=document.querySelector('input[name=tam]:checked');if(!r)return;
+    var i=+r.value,it=cart.find(function(c){return c.n===actual.full&&c.s===SZ[i]});
+    if(it)it.q++;else cart.push({n:actual.full,s:SZ[i],pr:actual.precios[i],q:1});
+    guardar();pintar();dlg.close();avisar('Agregado al carrito');
+  });
+
+  function pintar(){
+    var total=cart.reduce(function(a,c){return a+c.pr*c.q},0),cant=cart.reduce(function(a,c){return a+c.q},0);
+    $('#cuenta').textContent=cant;
+    $('#c-lista').innerHTML=cart.length?cart.map(function(c,i){
+      return '<li><div><strong>'+esc(c.n)+'</strong><small>'+c.s+' ml &middot; '+Q(c.pr)+'</small></div>'+
+        '<div class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="Quitar uno">&minus;</button><span>'+c.q+
+        '</span><button type="button" data-i="'+i+'" data-d="1" aria-label="Agregar uno">+</button></div></li>'}).join(''):
+      '<li>Tu carrito está vacío.</li>';
+    $('#c-total').textContent=Q(total);
+    $('#c-pagar').disabled=!cart.length;
+    $('#c-vaciar').hidden=!cart.length;
+  }
+  $('#c-lista').addEventListener('click',function(e){
+    var b=e.target.closest('button[data-i]');if(!b)return;
+    var i=+b.dataset.i;cart[i].q+=+b.dataset.d;
+    if(cart[i].q<1)cart.splice(i,1);
+    guardar();pintar();
+  });
+  $('#c-vaciar').addEventListener('click',function(){cart=[];guardar();pintar()});
+  $('#btn-carrito').addEventListener('click',function(){
+    $('#c-nota').hidden=true;$('#c-texto').hidden=true;pintar();$('#carrito').showModal();
+  });
+  $('#c-pagar').addEventListener('click',function(){
+    var total=cart.reduce(function(a,c){return a+c.pr*c.q},0);
+    var txt='Hola jossParfum.450, quiero hacer este pedido:\n'+
+      cart.map(function(c){return '- '+c.q+' x '+c.n+' ('+c.s+' ml): '+Q(c.pr*c.q)}).join('\n')+
+      '\nTotal: '+Q(total)+'\nMi nombre y datos de entrega: ';
+    var t=$('#c-texto');t.value=txt;t.hidden=false;$('#c-nota').hidden=false;
+    if(navigator.clipboard)navigator.clipboard.writeText(txt).catch(function(){});
+    window.open('https://ig.me/m/jossparfum.450','_blank','noopener');
+  });
+
+  document.querySelectorAll('dialog').forEach(function(d){
+    d.addEventListener('click',function(e){if(e.target===d)d.close()});
+    d.querySelector('.cerrar').addEventListener('click',function(){d.close()});
+  });
+
+  var SUG_URL='';
+  $('#form-sug').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target,msg=f.mensaje.value.trim();if(!msg)return;
+    if(SUG_URL){
+      fetch(SUG_URL,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)})
+        .then(function(r){if(!r.ok)throw 0;f.reset();avisar('Gracias, recibimos tu sugerencia')})
+        .catch(function(){avisar('No se pudo enviar, intenta de nuevo')});
+    }else{
+      window.open('https://wa.me/50243359759?text='+encodeURIComponent('Hola jossParfum.450! '+f.tipo.value+': '+msg),'_blank','noopener');
+      f.reset();
+    }
+  });
+
+  var norm=function(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
+  var tarjetas=[].slice.call(document.querySelectorAll('.p')).map(function(el){
+    return {el:el,t:norm(el.querySelector('h3').textContent+' '+el.querySelector('.marca').textContent)}});
+  var secciones=[$('#hombre'),$('#mujer')];
+  function buscar(){
+    var q=$('#buscar').value.trim(),toks=norm(q).split(/\s+/).filter(Boolean),total=0;
+    tarjetas.forEach(function(c){
+      var ok=toks.every(function(t){return c.t.indexOf(t)>-1}); 
+      c.el.hidden=!ok;if(ok)total++;
+    });
+    secciones.forEach(function(s){s.hidden=!s.querySelector('.p:not([hidden])')});
+    $('#sin-resultados').hidden=!(q&&total===0);
+    $('#b-q').textContent=q;
+    $('#b-info').textContent=!q?'Escribe el nombre de un perfume o una marca.':(total?total+(total===1?' perfume encontrado':' perfumes encontrados'):'');
+  }
+  $('#buscar').addEventListener('input',buscar);
+  $('#b-sug').addEventListener('click',function(){
+    var f=$('#form-sug');f.tipo.selectedIndex=0;f.mensaje.value='Me gustaria que tengan: '+$('#buscar').value.trim();
+    $('#sugerencias').scrollIntoView();f.mensaje.focus();
+  });
+  buscar();
+
+  pintar();
+})();
+</script>
+</body>
+</html>
